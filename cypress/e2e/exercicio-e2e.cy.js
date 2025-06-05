@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 // ***********************************************************
 //import fixtures from "../fixtures/produtos.json ";
+import '../support/commands.js';
 import produtosPages from "../support/page_objects/produtos-pages.js";
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
@@ -17,14 +18,16 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         before(() => {
             cy.visit('/');
         });
+ 
 
-        it('Realizar login', () => {
-
-            cy.get('.icon-user-unfollow').click();
-            cy.get('#username').type('marco.suelio@hotmail.com');
-            cy.get('#password').type('123456'); { log: false }   // Não exibir o log da senha
-            cy.get('.woocommerce-form > .button').click();
+        it('Login com fixture', () => {
+            cy.visit('minha-conta');
+            cy.fixture('perfil').then((dados) => {
+                cy.login(dados.usuario, dados.senha)
+            })
+            cy.get('.page-title').should('contain', 'Minha conta')
         });
+
 
         it('Adicionar produtos ao carrinho', () => {
 
