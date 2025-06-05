@@ -1,0 +1,22 @@
+[
+    {
+        "nomeProduto": "Abominable Hoodie",
+        "tamanho": "L",
+        "cor": "Red",
+        "quantidade": 3
+    },
+
+    {
+        "nomeProduto": "Circe Hooded Ice Fleece",
+        "tamanho": "M",
+        "cor": "Gray",
+        "quantidade": 2
+    },
+
+    {
+        "nomeProduto": "Aether Gym Pant",
+        "tamanho": "33",
+        "cor": "Brown",
+        "quantidade": 4
+    }
+]
